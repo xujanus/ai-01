@@ -1,6 +1,6 @@
 前言：为了更好的以“实践”巩固“学习”，利用空余时间，打造一个属于自己的项目
 
-
+![打造实践领域](https://raw.githubusercontent.com/xujanus/MarkdownImages/master/ai-01/img-1.png)
 
 项目目标：
 
