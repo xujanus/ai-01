@@ -1,5 +1,11 @@
-# Compiled class file
+# Idea Configuration Files
+.idea
+log
+*.iml
+
+# Compiled class file and folder
 *.class
+target
 
 # Log file
 *.log
