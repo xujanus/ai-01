@@ -1,6 +1,7 @@
 package com.xujun365;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * <p>ClassName:     Console
@@ -13,7 +14,8 @@ public class Console {
     private static final String START_MESSAGE = "请输入：";
 
     /**
-     * 使用System.in的原始交互方式
+     * 使用System.in的原始方式，来读取控制台输入
+     * @return 用户输入
      */
     public String consoleBySystemIn() throws IOException {
         String order = null;
@@ -31,9 +33,25 @@ public class Console {
         return order;
     }
 
-    public static void main(String[] args) throws IOException {
-        Console console = new Console();
-        String order = console.consoleBySystemIn();
-        System.out.println("您输入的指令是："+order);
+    /**
+     * 使用scanner类，来读取控制台输入
+     * @return 用户输入
+     */
+    public String consoleByScanner(){
+        System.out.println(START_MESSAGE);
+
+        Scanner sc = new Scanner(System.in);
+
+        return sc.nextLine();
+    }
+
+    public static void main(String[] args){
+        System.out.println("请输入：");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("wait1");
+        System.out.println(sc.nextLine());
+        System.out.println("wait2");
+        System.out.println(sc.nextLine());
+        System.out.println("done");
     }
 }

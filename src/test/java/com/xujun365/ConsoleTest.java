@@ -16,8 +16,28 @@ import static org.junit.Assert.*;
  */
 public class ConsoleTest {
     @Test
+    public void consoleByScanner() throws Exception {
+        String testOrder = "this is a order test!";
+        String testOrderResult;
+
+        InputStream si = System.in;
+        try{
+            //重新分配“标准”输入流
+            System.setIn(new ByteArrayInputStream(testOrder.getBytes()));
+
+            Console console = new Console();
+            testOrderResult = console.consoleByScanner();
+        }finally {
+            System.setIn(si);
+        }
+
+        System.out.println(testOrder);
+        assertTrue(testOrder.equals(testOrderResult));
+    }
+
+    @Test
     public void consoleBySystemIn() throws Exception {
-        String testOrder = "this is a order!";
+        String testOrder = "this is a order test!";
         String testOrderResult;
 
         InputStream si = System.in;
