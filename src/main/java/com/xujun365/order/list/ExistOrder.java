@@ -4,7 +4,7 @@ import com.xujun365.order.Order;
 
 /**
  * <p>ClassName:     ExistOrder
- * <p>Description:   提出命令
+ * <p>Description:   提出命令的执行类
  * <p>Author         xujun
  * <p>Version        V1.0
  * <p>Date           2018/2/8

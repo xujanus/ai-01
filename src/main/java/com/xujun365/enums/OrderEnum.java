@@ -1,7 +1,7 @@
 package com.xujun365.enums;
 
 import com.xujun365.order.Order;
-import com.xujun365.order.list.ExistOrder;
+import com.xujun365.order.list.*;
 import lombok.Getter;
 
 /**
@@ -13,8 +13,8 @@ import lombok.Getter;
  */
 public enum OrderEnum {
     EXIST("退出", new ExistOrder()),
-    CHAT("聊天"),
-    WEATHER("天气");
+    CHAT("聊天", new ChatOrder()),
+    WEATHER("天气", new WeatherOrder());
 
     //指令的口令
     @Getter
@@ -24,6 +24,7 @@ public enum OrderEnum {
     @Getter
     Order order;
 
+    //用于未实现的指令使用，冗余设计
     OrderEnum(String word) {
         this.word = word;
         this.order = null;

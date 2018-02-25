@@ -1,6 +1,7 @@
 package com.xujun365.order;
 
 import com.xujun365.enums.OrderEnum;
+import com.xujun365.order.list.ChatOrder;
 
 /**
  * <p>ClassName:     OrderParser
@@ -14,8 +15,7 @@ public class OrderParser {
     public void parse(String word){
         Order order = OrderEnum.getOrderByWord(word);
         if(order==null){
-            //// TODO: xujun 2018/2/8 用聊天指令重写
-            System.out.println("找不到你的指令："+ word);
+            new ChatOrder(word).executeOrder();
         }else {
             order.executeOrder();
         }
