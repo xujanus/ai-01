@@ -22,6 +22,12 @@
             <artifactId>lombok</artifactId>
             <version>1.16.8</version>
         </dependency>
+        <!-- json工具，https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.8.9</version>
+        </dependency>
     </dependencies>
 
     <!-- 如果你用maven构建的项目，那么在pom.xml中添加编译插件，指明编译器的原/目标版本，ideal会自动给你配制编译器的版本，无需手动设置了，省去了配置IDE的麻烦。 -->

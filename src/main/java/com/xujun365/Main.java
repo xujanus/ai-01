@@ -16,15 +16,15 @@ public class Main {
         //用户指令
         String order;
 
-        do{
+        do {
             order = console.consoleByScanner();
             OrderParser orderParser = new OrderParser();
             orderParser.parse(order);
 
-        }while (!OrderEnum.EXIST.getWord().equals(order));
+        } while (!OrderEnum.EXIST.getWord().equals(order));
     }
 
-    public void test(String args){
+    public void test(String args) {
         System.out.println(args);
     }
 }

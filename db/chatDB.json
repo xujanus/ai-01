@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "recordList": [
+    {
+      "keyWord": [
+        "你好"
+      ],
+      "reply": "你好"
+    },
+    {
+      "keyWord": [
+        "你",
+        "名字"
+      ],
+      "reply": "我的名字是AI-01"
+    }
+  ]
+}
