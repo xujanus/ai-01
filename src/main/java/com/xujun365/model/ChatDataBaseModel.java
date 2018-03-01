@@ -15,6 +15,7 @@ import java.util.List;
 public class ChatDataBaseModel {
     //数据库版本
     final int version = 1;
+    //聊天数据
     List<ChatRecordModel> recordList;
 
 }
