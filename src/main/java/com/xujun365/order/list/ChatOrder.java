@@ -24,6 +24,7 @@ public class ChatOrder extends Order {
     private static final String LOCAL_DB_PATH = "E:\\github\\local_db\\chatDB.json";
     private static final String STUDY_ORDER_WORD = "学习：";
     private static final String STUDY_ORDER_SUCCESS = "学习成功！";
+    private static final String WEATHER_REPORT_ORDER_WORD = "的天气";
     //聊天数据缓存
     private static ChatDataBaseModel chatDataCache;
     String lastSentence;
@@ -50,8 +51,20 @@ public class ChatOrder extends Order {
             return;
         }
 
+        //过滤天气关键字，触发天气预报模式
+        if (checkIsWeatherReportOrder(lastSentence)) {
+            doWeatherReportOrder(lastSentence);
+            return;
+        }
+
         //聊天程序
         System.out.println(reply(lastSentence));
+    }
+
+    //执行当前天气预报命令
+    private void doWeatherReportOrder(String lastSentence) {
+        String text = lastSentence.substring(0, lastSentence.lastIndexOf(WEATHER_REPORT_ORDER_WORD));
+        new WeatherOrder(text).executeOrder();
     }
 
     //学习当前语句
@@ -78,7 +91,7 @@ public class ChatOrder extends Order {
             record.setKeyWord(keyWord);
             record.setReply(reply);
             recordList.add(record);
-        }else {
+        } else {
             record.setReply(reply);
         }
 
@@ -106,6 +119,12 @@ public class ChatOrder extends Order {
             }
         }
         return false;
+    }
+
+    //判断当前句子是否是天气预报口令
+    private boolean checkIsWeatherReportOrder(String lastSentence) {
+        //关键词存在，并且不是第一个词
+        return lastSentence.lastIndexOf(WEATHER_REPORT_ORDER_WORD) >= 0 && lastSentence.length() > WEATHER_REPORT_ORDER_WORD.length();
     }
 
     //回话

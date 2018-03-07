@@ -13,7 +13,9 @@ import com.xujun365.order.list.ChatOrder;
 public class OrderParser {
 
     public void parse(String word){
+        //命令解析，这里的命令只能通过单一的关键字触发。命令的其它使用方法，可以通过聊天模式解析触发。
         Order order = OrderEnum.getOrderByWord(word);
+        //如果命令不存在，进入聊天模式。部分命令可以在聊天模式下触发，如“天气”
         if(order==null){
             new ChatOrder(word).executeOrder();
         }else {
