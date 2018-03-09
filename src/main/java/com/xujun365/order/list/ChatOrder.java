@@ -6,6 +6,7 @@ import com.xujun365.model.ChatRecordModel;
 import com.xujun365.order.Order;
 import com.xujun365.utils.FileUtil;
 import com.xujun365.utils.JsonUtil;
+import com.xujun365.utils.PropertiesUtil;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashSet;
@@ -23,7 +24,7 @@ import java.util.Set;
 public class ChatOrder extends Order {
     private static final String NO_LAST_SENTENCE_REPLAY = "你好，我是AI-01，很高兴能和你聊天~";
     private static final String CAN_NO_ANALYSIS_SENTENCE_REPLAY = "抱歉，我不知道该怎么回答你哦";
-    private static final String LOCAL_DB_PATH = "E:\\github\\local_db\\chatDB.json";
+    private static final String LOCAL_DB_PATH = PropertiesUtil.readValue("db.chat");
     private static final String STUDY_ORDER_WORD = "学习：";
     private static final String STUDY_ORDER_SUCCESS = "学习成功！";
     private static final String WEATHER_REPORT_ORDER_WORD = "的天气";

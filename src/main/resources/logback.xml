@@ -7,8 +7,10 @@
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <!-- 动态日志级别 -->
     <jmxConfigurator />
+    <!-- 定义配置文件 -->
+    <property resource="system.properties" />
     <!-- 定义日志文件 输出位置 -->
-    <property name="log_dir" value="E:/github/log" />
+    <property name="log_dir" value="${log.path}" />
     <!-- <property name="log_dir" value="/home/hadmin/data/logs/src" />-->
     <!-- 日志最大的历史 30天 -->
     <property name="maxHistory" value="30" />
