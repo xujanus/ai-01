@@ -6,6 +6,7 @@ import com.xujun365.model.ChatRecordModel;
 import com.xujun365.order.Order;
 import com.xujun365.utils.FileUtil;
 import com.xujun365.utils.JsonUtil;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashSet;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.Set;
  * <p>Version        V1.0
  * <p>Date           2018/2/25
  */
+@Slf4j
 public class ChatOrder extends Order {
     private static final String NO_LAST_SENTENCE_REPLAY = "你好，我是AI-01，很高兴能和你聊天~";
     private static final String CAN_NO_ANALYSIS_SENTENCE_REPLAY = "抱歉，我不知道该怎么回答你哦";
@@ -183,14 +185,16 @@ public class ChatOrder extends Order {
         if (chatDataCache != null) {
             String json_str = JsonUtil.pojoToJson(chatDataCache);
             FileUtil.writeFile(LOCAL_DB_PATH, json_str);
-            System.out.println("缓存数据保存到本地成功");
+            log.info("缓存数据保存到本地成功");
         } else {
-            System.out.println("缓存数据不存在，无法保存到本地！");
+            log.info("缓存数据不存在，无法保存到本地！");
         }
     }
 
     //本地测试
     public static void main(String[] args) throws JsonProcessingException {
+        log.info("测试日志记录-info2");
+        log.debug("测试日志记录-debug2");
         System.out.println(checkIsStudyOrder("学习： 你 的 "));
     }
 }

@@ -2,6 +2,7 @@ package com.xujun365;
 
 import com.xujun365.enums.OrderEnum;
 import com.xujun365.order.OrderParser;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>ClassName:     Main
@@ -10,8 +11,10 @@ import com.xujun365.order.OrderParser;
  * <p>Version        V1.0
  * <p>Date           2018/2/6
  */
+@Slf4j
 public class Main {
     public static void main(String[] args) {
+        log.info("AI程序已启动...");
         Console console = new Console();
         //用户指令
         String order;
